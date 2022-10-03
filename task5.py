@@ -1,16 +1,28 @@
-# Реализуйте алгоритм перемешивания списка
-import random
+# Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
+#
+# Пример:
+#
+# - для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
 
-n1 = int(input('введите длину списка: '))
+k = 8
 
-list = []
-for i in range(1, n1 + 1):
-    list.append(i)
-print(list)
+my_list = [0, 1]
 
-i = 0
-for i in list:
-    b = random.randint(0, len(list) - 1)
-    list[i-1], list[b] = list[b], list[i-1]
+e = 0
+while e < k - 1:
+    my_list.append(1)
+    e += 1
+my_list[k] = 0
 
-print(list)
+i = k
+while i < 2 * k:
+    my_list.append(my_list[i-1] + my_list[i])
+    i += 1
+
+x = k
+while x > -1:
+    my_list[x] = my_list[x + 2] - my_list[x + 1]
+    x -= 1
+
+
+print(my_list)

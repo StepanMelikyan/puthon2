@@ -1,24 +1,26 @@
-# Задайте список из N элементов, заполненных числами из промежутка [-N, N].
-# Найдите произведение элементов на указанных позициях. Позиции хранятся в файле file.txt в одной строке одно число.
+# Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+#
+# Пример:
+#
+# - 45 -> 101101
+# - 3 -> 11
+# - 2 -> 10
 
-n1 = int(input('введите число: '))
-n2 = -n1
-list = []
-for i in range(n2, n1):
-    list.append(i)
-print(list)
-
-list2 = []
-n3 = int(input('сколько чисел нужно найти: '))
+my_list = []
+n = 156
+if n == 1:
+    my_list.append(1)
+elif n == 2:
+    my_list.append(1)
+    my_list.append(0)
+else:
+    while n != 0:
+        if n % 2 != 0:
+            my_list.append(1)
+        else:
+            my_list.append(0)
+        n = n // 2
 i = 0
-while i < n3:
-    list2.append(int(input(f'введите позицию номер {i + 1}: ')))
-    i = i + 1
-e = 0
-a = 1
-while e < n3:
-    a = a * list[list2[e]-1]
-    e = e + 1
-print(a)
-
-
+while i < len(my_list):
+    print(my_list[i], end='')
+    i += 1
