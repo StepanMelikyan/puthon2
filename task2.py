@@ -1,10 +1,13 @@
-# Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
+n = int(input('ведите число: '))
 
-n = int(input('введите число: '))
-f = 1
-list= []
-for i in range(1, n+1):
-    f = f * i
-    list.append(f)
-
-print(list)
+Ans = []
+d = 2
+while d * d <= n:
+    if n % d == 0:
+        Ans.append(d)
+        n //= d
+    else:
+        d += 1
+    if n > 1:
+        Ans.append(n)
+    print(Ans)

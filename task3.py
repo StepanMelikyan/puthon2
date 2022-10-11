@@ -1,13 +1,12 @@
-# Задайте список из n чисел последовательности $(1+\frac 1 n)^n$ и выведите на экран их сумму.
+# Задайте последовательность чисел. Напишите программу, которая выведет
+# список неповторяющихся элементов исходной последовательности.
+
+numbers = [1, 2, 2, 3, 3, 4, 5, 7, 7, 7, 8, 15]
 
 
-n = int(input('введите число: '))
-list= []
-for i in range(1, n+1):
-    m = i * 3 + 1
-    list.append(m)
-list2= []
-for i in range(1, n+1):
-    list2.append(i)
-for i in range(0, n):
-    print(f'{list2[i]}: {list[i]}', end=', ')
+list = []
+unique_numbers = set(numbers)
+
+for number in unique_numbers:
+    list.append(number)
+print(list)
