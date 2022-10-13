@@ -83,7 +83,7 @@ else:
             if candy > max_take * 2:
                 move2 = random.randint(1, max_take)
             elif max_take + 1 < candy <= max_take * 2:
-                move2 = candy - max_take + 1
+                move2 = candy - 29
             elif candy == max_take + 1:
                 move2 = 1
             else:
