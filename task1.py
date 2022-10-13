@@ -1,9 +1,11 @@
-# Напишите программу, которая принимает на вход вещественное число и показывает сумму его цифр.
+# Напишите программу, удаляющую из текста все слова, содержащие ""абв"".
 
-x = input('введите число: ')
-array = []
-for i in range(len(x)):
-    array.append(x[i])
-array2 = []
-array2 = [int(e) for e in array]
-print(sum(array2))
+text = input('введите текст: ').split()
+print(text)
+i = 0
+
+while i < len(text):
+    if "абв" in text[i]:
+        del text[i]
+    i += 1
+print(text)
